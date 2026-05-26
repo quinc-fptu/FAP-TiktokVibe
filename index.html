@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoFAP - TikTok Dark Vibe FPT Academic Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #060608;
+      --card-bg: rgba(255, 255, 255, 0.02);
+      --card-border: rgba(255, 255, 255, 0.06);
+      --accent: hsl(174, 90%, 55%);
+      --accent-glow: rgba(37, 244, 238, 0.15);
+      --rose: hsl(350, 80%, 58%);
+      --rose-glow: rgba(254, 44, 85, 0.15);
+      --text: #F1F1F5;
+      --text-muted: #8E8E9F;
+      --primary: #FE2C55;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(254, 44, 85, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(37, 244, 238, 0.05) 0%, transparent 40%);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 6, 8, 0.7);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      transform: rotate(-10deg);
+    }
+
+    .logo span {
+      background: linear-gradient(90deg, var(--rose) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 10px 20px;
+      border-radius: 9999px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(254, 44, 85, 0.08);
+      border: 1px solid rgba(254, 44, 85, 0.2);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--rose);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .hero-badge-icon {
+      width: 12px;
+      height: 12px;
+      margin-right: 2px;
+    }
+
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 38px;
+        letter-spacing: -1px;
+      }
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, var(--rose) 0%, #D83FFF 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--rose);
+      color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(254, 44, 85, 0.3);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      background: hsl(350, 85%, 62%);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(254, 44, 85, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* Live Demo Mockup */
+    .demo-section {
+      padding: 40px 0 80px 0;
+    }
+
+    .mockup-container {
+      background: #0D0E12;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 6px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 120px rgba(254, 44, 85, 0.03);
+      position: relative;
+    }
+
+    /* Windows border */
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #0A0B0E;
+      border-radius: 14px 14px 0 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #27282F;
+    }
+    .mockup-dot.red { background: #FE5F56; }
+    .mockup-dot.yellow { background: #FEB024; }
+    .mockup-dot.green { background: #28C840; }
+
+    .mockup-address {
+      background: #14161E;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 4px 20px;
+      border-radius: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      width: 40%;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    .mockup-dummy-right {
+      width: 32px;
+    }
+
+    .mockup-body {
+      background: #08090C;
+      border-radius: 0 0 14px 14px;
+      padding: 20px;
+      min-height: 480px;
+    }
+
+    /* Real FAP Header Mockup */
+    .fap-mock-nav {
+      background: #0F111A;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .fap-mock-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .fap-mock-nav-logo span {
+      color: #FF5A00; /* FPT Orange */
+    }
+
+    .fap-mock-nav-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .fap-mock-nav-links span.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Real FAP 3-Column Dashboard Layout */
+    .fap-dashboard-mockup {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Row 1: Today's Agenda & Deadlines (2-column layout) */
+    .mock-row-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 992px) {
+      .mock-row-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Row 2: 3 Columns of Categories */
+    .mock-row-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 992px) {
+      .mock-row-bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mini Card */
+    .mini-card {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .mini-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mini-card-title.accent-title {
+      color: var(--accent);
+    }
+
+    .mini-card-title.rose-title {
+      color: var(--rose);
+    }
+
+    /* Today's Agenda Mockup */
+    .agenda-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .agenda-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .agenda-icon {
+      padding: 6px;
+      border-radius: 6px;
+      background: rgba(37, 244, 238, 0.08);
+      border: 1px solid rgba(37, 244, 238, 0.15);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .agenda-icon.exam {
+      background: rgba(254, 44, 85, 0.08);
+      border: 1px solid rgba(254, 44, 85, 0.15);
+      color: var(--rose);
+    }
+
+    .agenda-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .agenda-code {
+      font-weight: 700;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    .agenda-meta {
+      display: flex;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .agenda-meta i {
+      width: 10px;
+      height: 10px;
+    }
+
+    .agenda-status {
+      font-size: 9px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 99px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #34D399;
+    }
+
+    .agenda-status.exam-badge {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #F87171;
+    }
+
+    /* Deadlines Countdown Mockup */
+    .deadline-countdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(254, 44, 85, 0.03);
+      border: 1px solid rgba(254, 44, 85, 0.1);
+    }
+
+    .deadline-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .deadline-icon-wrapper {
+      padding: 8px;
+      border-radius: 50%;
+      background: rgba(254, 44, 85, 0.1);
+      color: var(--rose);
+      box-shadow: 0 0 10px var(--rose-glow);
+    }
+
+    .deadline-code {
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .deadline-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .deadline-timer {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--rose);
+      background: rgba(254, 44, 85, 0.1);
+      border: 1px solid rgba(254, 44, 85, 0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* 3-Column lists styling */
+    .fap-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .fap-link-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.005);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      transition: all 0.2s;
+    }
+
+    .fap-link-item:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .fap-link-item i {
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .fap-link-item.cancel-btn {
+      border-color: rgba(239, 68, 68, 0.15);
+      background: rgba(239, 68, 68, 0.02);
+    }
+    .fap-link-item.cancel-btn:hover {
+      background: rgba(239, 68, 68, 0.05);
+    }
+    .fap-link-item.cancel-btn i {
+      color: var(--rose);
+    }
+
+    /* Table Mockup inside column */
+    .mock-table-card {
+      padding: 12px;
+    }
+
+    .mock-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+    }
+
+    .mock-table th, .mock-table td {
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .mock-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .mock-table td {
+      color: var(--text);
+    }
+
+    .mock-table td.urgent-td {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Features Grid */
+    .features {
+      padding: 60px 0;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(254, 44, 85, 0.06);
+      border: 1px solid rgba(254, 44, 85, 0.15);
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+      background: rgba(37, 244, 238, 0.06);
+      border-color: rgba(37, 244, 238, 0.15);
+      color: var(--accent);
+    }
+
+    .feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Installation Guide Section */
+    .install {
+      padding: 60px 0 100px 0;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .install-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .install-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .step-num {
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--rose) 0%, var(--accent) 100%);
+      font-weight: 900;
+      font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 18px;
+    }
+
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      background: #040406;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-wrap">
+      <a href="#" class="logo">
+        <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#logoGrad)" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="2" y1="2" x2="22" y2="12" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FE2C55"/>
+              <stop offset="1" stop-color="#25F4EE"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Neo<span>FAP</span>
+      </a>
+      <a href="https://github.com/quinc-fptu/FAP-TiktokVibe" target="_blank" rel="noopener noreferrer" class="nav-btn">
+        <i data-lucide="github" class="size-4"></i>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <i data-lucide="sparkles" class="hero-badge-icon"></i>
+        Version 3.0.0 is live
+      </div>
+      <h1 class="hero-title">Trải nghiệm FAP theo phong cách <span>TikTok Dark Vibe</span></h1>
+      <p class="hero-subtitle">Biến đổi trang Academic Portal FPT University tẻ nhạt thành một không gian làm việc tối giản, hiện đại và bảo vệ đôi mắt của bạn.</p>
+      
+      <div class="hero-actions">
+        <a href="./neofap-extension.zip" download class="btn btn-primary">
+          <i data-lucide="download"></i>
+          Tải xuống Extension (.ZIP)
+        </a>
+        <a href="#install" class="btn btn-secondary">
+          <i data-lucide="help-circle"></i>
+          Xem hướng dẫn cài đặt
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mockup Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="mockup-container">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <div class="mockup-dot red"></div>
+            <div class="mockup-dot yellow"></div>
+            <div class="mockup-dot green"></div>
+          </div>
+          <div class="mockup-address">https://fap.fpt.edu.vn/Student.aspx</div>
+          <div class="mockup-dummy-right"></div>
+        </div>
+        <div class="mockup-body">
+          <div class="fap-dashboard-mockup">
+            
+            <!-- Real FAP Mockup Header -->
+            <div class="fap-mock-nav">
+              <div class="fap-mock-nav-logo">
+                <i data-lucide="graduation-cap" class="size-4"></i>
+                FPT <span>ACADEMIC PORTAL</span>
+              </div>
+              <div class="fap-mock-nav-links">
+                <span class="active">TRANG CHỦ</span>
+                <span>TIN TỨC</span>
+                <span>THỦ TỤC / ĐƠN TỪ</span>
+                <span>TRA CỨU</span>
+                <span>BÁO CÁO</span>
+                <span>COURSERA</span>
+              </div>
+              <div class="fap-mock-nav-logo">
+                <i data-lucide="search" class="size-4"></i>
+              </div>
+            </div>
+
+            <!-- Row 1: Top Widgets (Today's Agenda & Deadlines) -->
+            <div class="mock-row-top">
+              
+              <!-- Today's Agenda -->
+              <div class="mini-card">
+                <div class="mini-card-title accent-title">
+                  <i data-lucide="calendar" class="size-4"></i>
+                  Today's Agenda
+                </div>
+                <div class="agenda-list">
+                  <div class="agenda-item">
+                    <div class="agenda-item-left">
+                      <div class="agenda-icon">
+                        <i data-lucide="book-open" class="size-3.5"></i>
+                      </div>
+                      <div class="agenda-details">
+                        <span class="agenda-code">XXX101 - class</span>
+                        <span class="agenda-meta">
+                          <i data-lucide="clock" class="size-3"></i> 07:30 - 09:50 | 
+                          <i data-lucide="map-pin" class="size-3"></i> DE-A305
+                        </span>
+                      </div>
+                    </div>
+                    <span class="agenda-status">Attended</span>
+                  </div>
+
+                  <div class="agenda-item">
+                    <div class="agenda-item-left">
+                      <div class="agenda-icon exam">
+                        <i data-lucide="award" class="size-3.5"></i>
+                      </div>
+                      <div class="agenda-details">
+                        <span class="agenda-code text-rose">SHD392 - exam</span>
+                        <span class="agenda-meta">
+                          <i data-lucide="clock" class="size-3"></i> 13:30 - 15:50 | 
+                          <i data-lucide="map-pin" class="size-3"></i> AL-B120
+                        </span>
+                      </div>
+                    </div>
+                    <span class="agenda-status exam-badge">Scheduled</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deadlines Countdown -->
+              <div class="mini-card">
+                <div class="mini-card-title rose-title">
+                  <i data-lucide="clock" class="size-4"></i>
+                  Deadlines
+                </div>
+                <div class="agenda-list">
+                  <div class="deadline-countdown-item">
+                    <div class="deadline-left">
+                      <div class="deadline-icon-wrapper">
+                        <i data-lucide="alert-triangle" class="size-4.5"></i>
+                      </div>
+                      <div>
+                        <div class="deadline-code">KEK101 - class</div>
+                        <div class="deadline-desc">Lớp học tiếp theo sắp diễn ra</div>
+                      </div>
+                    </div>
+                    <div class="deadline-timer">13 : 44 : 40</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Row 2: Bottom Columns (3-column layout) -->
+            <div class="mock-row-bottom">
+              
+              <!-- Column 1: Application Deadlines -->
+              <div class="mini-card mock-table-card">
+                <div class="mini-card-title accent-title">
+                  <i data-lucide="file-text" class="size-4"></i>
+                  Application Deadlines
+                </div>
+                <table class="mock-table">
+                  <thead>
+                    <tr>
+                      <th>Loại thủ tục</th>
+                      <th>Hạn nộp đơn</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Chuyển ngành</td>
+                      <td class="urgent-td">4 tuần trước học kỳ mới</td>
+                    </tr>
+                    <tr>
+                      <td>Chuyển cơ sở</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Nhập học trở lại</td>
+                      <td class="urgent-td">10 ngày trước học kỳ mới</td>
+                    </tr>
+                    <tr>
+                      <td>Bảo lưu học kỳ</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Tạm ngừng môn</td>
+                      <td class="urgent-td">1 tuần trước học kỳ mới</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Column 2: Registration, Feedback, Others -->
+              <div class="fap-link-list">
+                <div class="mini-card">
+                  <div class="mini-card-title accent-title">
+                    <i data-lucide="edit-3" class="size-4"></i>
+                    Thủ tục / Đơn từ
+                  </div>
+                  <div class="fap-link-list">
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Suspend one semester to take repeated course
+                    </a>
+                    <a href="#" class="fap-link-item cancel-btn">
+                      <i data-lucide="x" class="size-3"></i>
+                      Suspend one semester (Cancel)
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Register extra courses
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Register to improve mark
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mini-card">
+                  <div class="mini-card-title accent-title">
+                    <i data-lucide="message-square" class="size-4"></i>
+                    Feedback (Ý kiến)
+                  </div>
+                  <div class="fap-link-list">
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Feedback about teaching
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 3: Information Access, Reports -->
+              <div class="fap-link-list">
+                <div class="mini-card">
+                  <div class="mini-card-title accent-title">
+                    <i data-lucide="search" class="size-4"></i>
+                    Tra cứu thông tin
+                  </div>
+                  <div class="fap-link-list">
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      University timetable
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Weekly timetable
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      View exam schedule
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mini-card">
+                  <div class="mini-card-title accent-title">
+                    <i data-lucide="bar-chart-2" class="size-4"></i>
+                    Báo cáo (Reports)
+                  </div>
+                  <div class="fap-link-list">
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Attendance report
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Mark Report
+                    </a>
+                    <a href="#" class="fap-link-item">
+                      <i data-lucide="chevron-right" class="size-3"></i>
+                      Academic Transcript
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Tính Năng Độc Đáo</h2>
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="moon"></i>
+          </div>
+          <h3 class="feature-title">Chế độ tối (Dark Mode)</h3>
+          <p class="feature-desc">Màu sắc tinh tế và độ tương phản dịu mắt được căn chỉnh theo thang HSL, mang lại trải nghiệm TikTok vibe thời thượng mà không mỏi mắt.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="clock"></i>
+          </div>
+          <h3 class="feature-title">Vòng đếm ngược Deadline</h3>
+          <p class="feature-desc">Tự động quét lịch thi và lịch học để đếm ngược trực tiếp. Có cảnh báo đặc biệt khi thời hạn còn dưới 24 giờ.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="color:var(--rose);background:rgba(254, 44, 85, 0.06);border-color:rgba(254, 44, 85, 0.15);">
+            <i data-lucide="calendar"></i>
+          </div>
+          <h3 class="feature-title">Lịch học trong ngày</h3>
+          <p class="feature-desc">Hiển thị các slot học và thi cụ thể cho ngày hôm nay theo múi giờ Việt Nam (GMT+7), tự động định vị đúng cột ngày tháng trên bảng FAP.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation -->
+  <section class="install" id="install">
+    <div class="container">
+      <h2 class="section-title">Hướng Dẫn Cài Đặt</h2>
+      <div class="install-steps">
+        
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3 class="step-title">Tải xuống tệp ZIP</h3>
+          <p class="step-desc">Tải tệp tin <a href="./neofap-extension.zip" download style="color:var(--rose);font-weight:700;">neofap-extension.zip</a> và tiến hành giải nén ra một thư mục trên máy tính.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3 class="step-title">Bật chế độ nhà phát triển</h3>
+          <p class="step-desc">Mở trình duyệt, truy cập địa chỉ <code>chrome://extensions/</code> và gạt bật công tắc <strong>Developer mode</strong> ở góc trên bên phải.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3 class="step-title">Tải tiện ích đã giải nén</h3>
+          <p class="step-desc">Nhấp nút <strong>Load unpacked</strong> ở góc trái và chọn thư mục chứa extension vừa giải nén ở bước 1 để hoàn tất cài đặt.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 NeoFAP. Built for FPT Students with ❤️.</p>
+      <p>Mã nguồn mở được đóng gói trên <a href="https://github.com/quinc-fptu/FAP-TiktokVibe" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
