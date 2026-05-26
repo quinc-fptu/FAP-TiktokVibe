@@ -30,6 +30,25 @@
       }
       document.body.classList.add("text-foreground", "bg-background", "flex", "h-full", "text-base", "antialiased");
       document.body.innerHTML = '<div class="flex grow" id="root"></div>';
+      try {
+        Array.from(document.styleSheets).forEach((sheet) => {
+          try {
+            if (!sheet.href || !sheet.href.includes(chrome.runtime.id)) {
+              sheet.disabled = true;
+            }
+          } catch (e) {
+            sheet.disabled = true;
+          }
+        });
+        document.querySelectorAll('link[rel="stylesheet"]').forEach((el) => {
+          const href = el.getAttribute("href");
+          if (!href || !href.includes(chrome.runtime.id)) {
+            el.remove();
+          }
+        });
+      } catch (e) {
+        console.warn("NeoFAP: Could not disable some host stylesheets", e);
+      }
       document.head.innerHTML = `
         <title>NeoFAP \u2014 FPT Academic Portal</title>
         <meta charset="utf-8" />
