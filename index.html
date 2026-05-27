@@ -722,9 +722,111 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Mobile/Tablet Warning Overlay */
+    .mobile-warning {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: radial-gradient(circle at center, #0a0a0f 0%, #040406 100%);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .mobile-warning-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 24px;
+      max-width: 420px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .mobile-warning-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: rgba(254, 44, 85, 0.08);
+      border: 1px solid rgba(254, 44, 85, 0.15);
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(254, 44, 85, 0.15);
+      margin-bottom: 8px;
+    }
+
+    .mobile-warning-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .mobile-warning-title span {
+      background: linear-gradient(90deg, var(--rose) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .mobile-warning-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .mobile-warning-btn {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: underline;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
+    }
+
+    .mobile-warning-btn:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 1024px) {
+      .mobile-warning.active {
+        display: flex;
+      }
+      body.mobile-locked {
+        overflow: hidden;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="mobile-locked">
+
+  <!-- Mobile Warning -->
+  <div id="mobileWarning" class="mobile-warning active">
+    <div class="mobile-warning-card">
+      <div class="mobile-warning-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+          <line x1="12" x2="12" y1="18" y2="18"/>
+        </svg>
+      </div>
+      <h2 class="mobile-warning-title">Thiết bị <span>chưa hỗ trợ</span></h2>
+      <p class="mobile-warning-desc">
+        NeoFAP là Tiện ích mở rộng (Chrome Extension) thiết kế tối ưu dành riêng cho trình duyệt máy tính (Desktop) và không hỗ trợ giao diện di động. Vui lòng truy cập trang này bằng máy tính để tải xuống và cài đặt.
+      </p>
+      <button onclick="dismissMobileWarning()" class="mobile-warning-btn">Vẫn tiếp tục truy cập</button>
+    </div>
+  </div>
 
   <!-- Header -->
   <header>
@@ -1084,6 +1186,11 @@
   <script>
     // Initialize lucide icons
     lucide.createIcons();
+
+    function dismissMobileWarning() {
+      document.getElementById('mobileWarning').classList.remove('active');
+      document.body.classList.remove('mobile-locked');
+    }
   </script>
 </body>
 </html>
