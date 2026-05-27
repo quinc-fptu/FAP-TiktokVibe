@@ -723,6 +723,17 @@
       text-decoration: underline;
     }
 
+    .feature-icon-rose {
+      color: var(--rose);
+      background: rgba(254, 44, 85, 0.06);
+      border-color: rgba(254, 44, 85, 0.15);
+    }
+
+    .download-text-link {
+      color: var(--rose);
+      font-weight: 700;
+    }
+
     /* Mobile/Tablet Warning Overlay */
     .mobile-warning {
       display: none;
@@ -734,6 +745,7 @@
       justify-content: center;
       padding: 24px;
       text-align: center;
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
 
@@ -774,6 +786,7 @@
     .mobile-warning-title span {
       background: linear-gradient(90deg, var(--rose) 0%, var(--accent) 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -1136,7 +1149,7 @@
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon" style="color:var(--rose);background:rgba(254, 44, 85, 0.06);border-color:rgba(254, 44, 85, 0.15);">
+          <div class="feature-icon feature-icon-rose">
             <i data-lucide="calendar"></i>
           </div>
           <h3 class="feature-title">Lịch học trong ngày</h3>
@@ -1156,7 +1169,7 @@
         <div class="step-card">
           <div class="step-num">1</div>
           <h3 class="step-title">Tải xuống tệp ZIP</h3>
-          <p class="step-desc">Tải tệp tin <a href="./neofap-extension.zip" download style="color:var(--rose);font-weight:700;">neofap-extension.zip</a> và tiến hành giải nén ra một thư mục trên máy tính.</p>
+          <p class="step-desc">Tải tệp tin <a href="./neofap-extension.zip" download class="download-text-link">neofap-extension.zip</a> và tiến hành giải nén ra một thư mục trên máy tính.</p>
         </div>
 
         <div class="step-card">
